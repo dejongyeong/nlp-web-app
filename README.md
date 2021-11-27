@@ -1,8 +1,9 @@
 # NLP Web App: Sentiment Analysis
 
-Analyse and predict the sentiment of user defined inputs using Python, ReactJS and APIs.
+Analyse and predict the sentiment of user defined inputs using Python Django, ReactJS and APIs.
 
-<br />
+*P.S: This is an extension/improvement of my Bachelor Degree Final Year Project: [Sentiment Analysis Approach for Reputation Evaluation](https://github.com/dejongyeong/sentiment-analysis)* 
+
 
 ### **Technology**
 
@@ -10,13 +11,11 @@ Analyse and predict the sentiment of user defined inputs using Python, ReactJS a
 - Django REST Framework
 - ReactJS + ESLint AirBnB + Prettier
 
-<br />
 
 ### **Recommendations**
 
-Setup **Python Virtual Environments** before installing dependency packages: [Tutorial](https://docs.python.org/3.9/library/venv.html)
+- Setup **Python Virtual Environments** before installing dependency packages: [Tutorial](https://docs.python.org/3.9/library/venv.html)
 
-<br />
 
 ### **References**
 
