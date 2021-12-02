@@ -1,11 +1,9 @@
 ### Penn Treebank Part of Speech (POS) Tags
 
-<br/>
-**Reference:** [Penn Treebank POS](https://www.ling.upenn.edu/courses/Fall_2003/ling001/penn_treebank_pos.html)
 
-<br/>
+
 | Number | Tag  | Description                              |
-|--------|------|------------------------------------------|
+| ------ | ---- | ---------------------------------------- |
 | 1      | CC   | Coordinating conjunction                 |
 | 2      | CD   | Cardinal number                          |
 | 3      | DT   | Determiner                               |
@@ -42,3 +40,6 @@
 | 34     | WP   | Wh-pronoun                               |
 | 35     | WP$  | Possessive wh-pronoun                    |
 | 36     | WRB  | Wh-adverb                                |
+
+
+<strong>Reference:</strong> [https://www.ling.upenn.edu/courses/Fall_2003/ling001/penn_treebank_pos.html](https://www.ling.upenn.edu/courses/Fall_2003/ling001/penn_treebank_pos.html)
