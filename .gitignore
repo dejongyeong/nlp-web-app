@@ -149,3 +149,6 @@ yarn-error.log*
 
 # vscode
 /.vscode
+
+# files
+*.csv
