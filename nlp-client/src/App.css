@@ -1,38 +1,151 @@
+/* reference: https://cssgradient.io/swatches/ */
 .App {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 100%;
+  background: linear-gradient(180deg, #a8c0ff 0%, #3f2b96 100%);
+  padding: 1em 2em;
+}
+
+.App__Header {
+  width: 100%;
+  text-align: left;
+  font-family: 'Raleway', 'Nunito Sans', sans-serif;
+  font-size: clamp(1.5rem, 2.4rem, 2.7rem);
+  color: #ffffff;
+  letter-spacing: 0.1em;
+  font-weight: bolder;
+  margin: 1em auto 0.5em auto;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.App__Context {
+  display: grid;
+  grid-gap: 3rem;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+}
+
+.App__Context > .App__Description > p {
+  font-family: 'Rubik', sans-serif;
+  font-weight: 400;
+  font-size: clamp(0.9rem, 1rem, 1.5rem);
+  color: #ffffff;
+  line-height: 33px;
+  letter-spacing: 0.15px;
+}
+
+.App__Context > .App__Description > p > strong {
+  color: #3f2b96;
+}
+
+.App__Context > .App__Description > p > a {
+  font-family: 'Rubik', sans-serif;
+  font-weight: 400;
+  font-size: clamp(0.9rem, 1rem, 1.5rem);
+  color: #ffffff;
+  line-height: 33px;
+  letter-spacing: 0.15px;
+  text-decoration-line: underline;
+  text-decoration-style: double;
+}
+
+.App__Context > .App__Description > p > a:hover {
+  color: #3f2b96;
+  transition-duration: 0.1s;
+}
+
+.App__Form > .App__Form__Result {
+  font-family: 'Rubik', sans-serif;
+  font-family: 300;
+  font-size: clamp(0.9rem, 0.95rem, 1.05rem);
+  color: #ffffff;
+  line-height: 33px;
+  font-weight: bold;
+  letter-spacing: 0.11em;
+}
+
+.App__Form > form > textarea {
+  resize: none !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  border: none;
+  font-family: 'Rubik', sans-serif;
+  font-weight: 400;
+  font-size: clamp(0.9rem, 0.95rem, 1.2rem);
+  color: #383d85;
+  padding: 13px;
+  border-radius: 10px;
+  background-color: #f8f3fcd4;
+  margin-top: 9.5px;
+  /* Reference: https://tobiasahlin.com/blog/layered-smooth-box-shadows */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.07),
+    0 4px 8px rgba(0, 0, 0, 0.07), 0 8px 16px rgba(0, 0, 0, 0.07),
+    0 16px 32px rgba(0, 0, 0, 0.07), 0 32px 64px rgba(0, 0, 0, 0.07);
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07),
+    0 2px 4px rgba(0, 0, 0, 0.07), 0 4px 8px rgba(0, 0, 0, 0.07),
+    0 8px 16px rgba(0, 0, 0, 0.07), 0 16px 32px rgba(0, 0, 0, 0.07),
+    0 32px 64px rgba(0, 0, 0, 0.07);
+}
+
+.App__Form > form > textarea:focus {
+  outline-color: #515ada !important;
+  outline-width: 1px !important;
+}
+
+.App__Form > form > button {
+  margin-top: 0.7em;
+  width: auto;
+  font-family: 'Rubik', sans-serif;
+  font-size: 0.8rem;
+  text-transform: uppercase;
   text-align: center;
+  letter-spacing: 1.5px;
+  border-radius: 10px;
+  outline: none !important;
+  border: none !important;
+  padding: 0.7em 1.4em;
+  border-radius: 8px;
+  background-color: #5643cc;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.07),
+    0 4px 8px rgba(0, 0, 0, 0.07), 0 8px 16px rgba(0, 0, 0, 0.07),
+    0 16px 32px rgba(0, 0, 0, 0.07), 0 32px 64px rgba(0, 0, 0, 0.07);
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07),
+    0 2px 4px rgba(0, 0, 0, 0.07), 0 4px 8px rgba(0, 0, 0, 0.07),
+    0 8px 16px rgba(0, 0, 0, 0.07), 0 16px 32px rgba(0, 0, 0, 0.07),
+    0 32px 64px rgba(0, 0, 0, 0.07);
+  color: #f8f3fc;
+  cursor: pointer;
+  appearance: button;
+  touch-action: manipulation;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App__Form > form > button:hover {
+  background-color: #3b2c9e;
+  transition-duration: 0.2s;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.App__Footer {
+  margin-top: 1em;
+  font-family: 'Rubik', sans-serif;
+  font-size: clamp(0.7rem, 0.85rem, 0.95rem);
+  text-align: center;
+  color: #ffffff;
+}
+
+/* * Media Queries for Responsiveness * */
+@media only screen and (max-width: 600.02px) {
+  .App {
+    height: 100% !important;
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  .App__Context {
+    grid-template-columns: 1fr;
+    row-gap: 2em;
   }
-  to {
-    transform: rotate(360deg);
+
+  .App__Footer {
+    margin-top: 10em;
   }
 }
