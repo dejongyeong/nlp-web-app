@@ -26,7 +26,7 @@ const App = function mainApp() {
             algorithms have been introduced, ranging from{" "}
             <strong>lexicon-based</strong> to <strong>machine learning</strong>{" "}
             or <strong>deep learning</strong>-based approaches. Implementation
-            of the models are available on{" "}
+            of the Sentiment Analysis Model can be found on{" "}
             <a
               href="https://github.com/dejongyeong/nlp-web-app/blob/ml-model/model/sentiment-analysis.ipynb"
               target="_blank"

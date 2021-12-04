@@ -30,7 +30,7 @@
 .App__Context > .App__Description > p {
   font-family: 'Rubik', sans-serif;
   font-weight: 400;
-  font-size: clamp(0.9rem, 1rem, 1.5rem);
+  font-size: clamp(0.9rem, 1rem, 1.2rem);
   color: #ffffff;
   line-height: 33px;
   letter-spacing: 0.15px;
@@ -43,12 +43,11 @@
 .App__Context > .App__Description > p > a {
   font-family: 'Rubik', sans-serif;
   font-weight: 400;
-  font-size: clamp(0.9rem, 1rem, 1.5rem);
+  font-size: clamp(0.9rem, 1rem, 1.2rem);
   color: #ffffff;
   line-height: 33px;
   letter-spacing: 0.15px;
   text-decoration-line: underline;
-  text-decoration-style: double;
 }
 
 .App__Context > .App__Description > p > a:hover {
@@ -58,12 +57,10 @@
 
 .App__Form > .App__Form__Result {
   font-family: 'Rubik', sans-serif;
-  font-family: 300;
-  font-size: clamp(0.9rem, 0.95rem, 1.05rem);
+  font-family: 400;
+  font-size: clamp(0.9rem, 1rem, 1.05rem);
   color: #ffffff;
   line-height: 33px;
-  font-weight: bold;
-  letter-spacing: 0.11em;
 }
 
 .App__Form > form > textarea {
@@ -105,7 +102,7 @@
   border-radius: 10px;
   outline: none !important;
   border: none !important;
-  padding: 0.7em 1.4em;
+  padding: 0.9em 1.4em;
   border-radius: 8px;
   background-color: #5643cc;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.07),
@@ -127,9 +124,9 @@
 }
 
 .App__Footer {
-  margin-top: 1em;
+  margin-top: 2em;
   font-family: 'Rubik', sans-serif;
-  font-size: clamp(0.7rem, 0.85rem, 0.95rem);
+  font-size: clamp(0.7rem, 0.75rem, 0.95rem);
   text-align: center;
   color: #ffffff;
 }
@@ -146,6 +143,26 @@
   }
 
   .App__Footer {
+    margin-top: 8em;
+  }
+}
+
+@media only screen and (max-width: 823.02px) and (orientation: landscape) {
+  .App {
+    height: 100% !important;
+  }
+
+  .App__Footer {
     margin-top: 10em;
+  }
+}
+
+@media only screen and (max-width: 1024.02px) and (max-height: 600.02px) and (orientation: landscape) {
+  .App {
+    height: 100% !important;
+  }
+
+  .App__Footer {
+    margin-top: 7em;
   }
 }
