@@ -9,6 +9,7 @@ _P.S: This is an extension/improvement/additional features of my Bachelor Degree
 - Python 3.9
 - Django REST Framework
 - ReactJS + ESLint AirBnB + Prettier
+- GitGuardian for Git Security Scanning & Secrets Detection
 
 ### **Recommendations**
 
