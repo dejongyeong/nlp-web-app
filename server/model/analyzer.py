@@ -6,12 +6,10 @@ import sklearn.metrics as mtr
 
 def classify_sentiment(sentence: str)->dict:
     """
-    A method that returns the sentiment of the user-defined sentence for django app
-    - .joblib file = model file
-    - .pk file = tfidf_vectorizer file
+    A method that returns the sentiment of the user-defined sentence for django app.
+    All multinomialnb*.joblib files are saved as follow: [tfidf vectorizer, ml-model]
     """
-    classifier = joblib.load(os.path.join(settings.BASE_DIR, 'model', 'multinomialnb_no_stopwords.joblib'))
-    vector = joblib.load(os.path.join(settings.BASE_DIR, 'model', 'multinomialnb_no_stopwords_vectorizer.joblib'))
+    vector, classifier = joblib.load(os.path.join(settings.BASE_DIR, 'model', 'multinomialnb_no_stopwords.joblib'))
     feature = vector.transform([sentence])      # must be a list
     
     # predict and calculate probability - it will return 1x2 matrix where:
