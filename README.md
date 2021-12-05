@@ -19,3 +19,4 @@ _P.S: This is an extension/improvement/additional features of my Bachelor Degree
 - Jordan Irabor: [How to Build a To-Do Application Using Django and React](https://www.digitalocean.com/community/tutorials/build-a-to-do-application-using-django-and-react)
 - Rahul Agarwal: [Text Preprocessing Methods for Deep Learning](https://towardsdatascience.com/nlp-learning-series-part-1-text-preprocessing-methods-for-deep-learning-20085601684b)
 - Mahdyar Hasanpour: [Resolve ansi-html vulnerability](https://github.com/Tjatse/ansi-html/issues/19#issuecomment-936734884)
+- AskPython: [Python Django App Structure and Project Structure](https://www.askpython.com/django/django-app-structure-project-structure)
