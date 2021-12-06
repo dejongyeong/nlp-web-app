@@ -42,13 +42,13 @@ const App = function mainApp() {
             Sentiment Analysis (SA) or Opinion Mining is a subfield of{" "}
             <strong>Natural Language Processing</strong> that extracts,
             identifies, and determines the underlying sentiments of either
-            positive, negative, or neutral from User Generated Contents (UGC).
-            It is the most researched subfield and has received a lot of
-            attention in recent decades. Since then, a variety approaches or
-            algorithms have been introduced, ranging from{" "}
-            <strong>lexicon-based</strong> to <strong>machine learning</strong>{" "}
-            or <strong>deep learning</strong>-based approaches. Implementation
-            of the Sentiment Analysis Model can be found on{" "}
+            positive, negative, or neutral from User Generated Contents. It is
+            the most researched subfield and has received a lot of attention in
+            recent decades. Since then, numerous approaches and algorithms have
+            been introduced, ranging from <strong>lexicon-based</strong> to{" "}
+            <strong>machine learning</strong> and <strong>deep learning</strong>
+            -based SA. Implementation of the Sentiment Analysis Model can be
+            found on{" "}
             <a
               href="https://github.com/dejongyeong/nlp-web-app/blob/ml-model/model/sentiment-analysis.ipynb"
               target="_blank"
