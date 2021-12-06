@@ -64,14 +64,28 @@ MIDDLEWARE = [
 # change the following two settings accordingly based on productions
 # reference: https://pythonrepo.com/repo/adamchainz-django-cors-headers-python-developing-restful-apis
 # reference: https://github.com/adamchainz/django-cors-headers#csrf-integration
+# reference: https://stackoverflow.com/questions/38841109/csrf-validation-does-not-work-on-django-using-https
+# reference: https://fractalideas.com/blog/making-react-and-django-play-well-together-single-page-app-model/
+# reference: https://dev.to/mdrhmn/deploying-react-django-app-using-heroku-2gfa
 
+ALLOWED_HOSTS = []     # '127.0.0.1:8000', 'localhost', 'xxx.herokuapp.com'
+
+CORS_ALLOW_CREDENTIALS = True
+
+CORS_REPLACE_HTTPS_REFERER = True
+
+CORS_ORIGIN_ALLOW_ALL = False
+
+# put heroku url here
 CORS_ALLOWED_ORIGINS = [
-    'http://127.0.0.1:8000',
-    'http://localhost:8000',
+    'http://127.0.0.1:3000',
+    'http://localhost:3000',
 ]
 
+# put heroku url here
 CSRF_TRUSTED_ORIGINS = [
-    'localhost:8000',
+    'localhost:3000',
+    '127.0.0.1:3000',
 ]
 
 ROOT_URLCONF = 'server.urls'

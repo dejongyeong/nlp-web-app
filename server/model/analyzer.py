@@ -19,7 +19,8 @@ def classify_sentiment(sentence: str)->dict:
     prob = classifier.predict_proba(feature)
     
     results = {
-        'pred': pred[0],
-        'prob': prob[:,pred[0]][0]
+        'pred': 'Negative' if pred[0] == 0 else "Positive",
+        'prob': round((prob[:,pred[0]][0] * 100), 2)
     }
+    
     return results        # the predicted class and the corresponding probability

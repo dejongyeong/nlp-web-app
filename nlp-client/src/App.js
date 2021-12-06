@@ -1,14 +1,36 @@
 import React, { useState } from "react";
+import axios from "axios";
 import "./App.css";
 
-const App = function mainApp() {
-  const [sentiment, setSentiment] = useState(null);
+axios.defaults.xsrfCookieName = "csrftoken";
+axios.defaults.xsrfHeaderName = "X-CSRFToken";
+axios.defaults.withCredentials = true;
 
-  const handleSubmit = (event) => {
+const App = function mainApp() {
+  const [sentiment, setSentiment] = useState("");
+  const [confidence, setConfidence] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
     const content = event.target.sentence.value;
-    console.log(content);
-    setSentiment("Positive");
+    const data = { sentence: content };
+
+    try {
+      setLoading(true);
+      // change this accordingly based on production
+      const response = await axios.post("/api/v1/analyze", data);
+      if (response.status === 200) {
+        const { pred, prob } = response.data.data;
+        setSentiment(`${pred}`);
+        setConfidence(`${prob}%`);
+      }
+      setLoading(false);
+    } catch (error) {
+      setErrorMessage("Oops!! Something went wrong on the backend!");
+      setLoading(false);
+    }
   };
 
   return (
@@ -38,7 +60,10 @@ const App = function mainApp() {
           </p>
         </div>
         <div className="App__Form">
-          <div className="App__Form__Result">Sentiment Tag: {sentiment}</div>
+          <div className="App__Form__Result">
+            <p>Sentiment Label: {sentiment}</p>
+            <p>Confidence Score: {confidence}</p>
+          </div>
           <form id="input-form" onSubmit={handleSubmit}>
             <textarea
               name="sentence"
@@ -48,8 +73,11 @@ const App = function mainApp() {
               placeholder="Try with you own text..."
               defaultValue="Today is a good day!!"
             />
-            <button type="submit">Classify Text</button>
+            <button type="submit" disabled={loading}>
+              Classify Text
+            </button>
           </form>
+          {errorMessage}
         </div>
       </main>
       <footer className="App__Footer">

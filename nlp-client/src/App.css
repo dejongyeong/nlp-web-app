@@ -123,6 +123,12 @@
   transition-duration: 0.2s;
 }
 
+.App__Form > form > button:disabled {
+  background-color: #484848 !important;
+  transition-duration: 0.2s;
+  cursor: wait;
+}
+
 .App__Footer {
   margin-top: 2em;
   font-family: 'Rubik', sans-serif;
