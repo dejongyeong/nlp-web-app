@@ -22,7 +22,7 @@
 
 .App__Context {
   display: grid;
-  grid-gap: 6rem;
+  grid-gap: 4rem;
   grid-template-columns: 1fr 1fr;
   width: 100%;
 }
@@ -30,10 +30,11 @@
 .App__Context > .App__Description > p {
   font-family: 'Rubik', sans-serif;
   font-weight: 400;
-  font-size: clamp(0.9rem, 1rem, 1.05rem);
+  font-size: clamp(0.95rem, 1.04rem, 1.09rem);
   color: #ffffff;
-  line-height: 33px;
-  letter-spacing: 0.15px;
+  line-height: 34px;
+  letter-spacing: 0.17px;
+  margin-bottom: 1rem;
 }
 
 .App__Context > .App__Description > p > strong {
@@ -43,7 +44,7 @@
 .App__Context > .App__Description > p > a {
   font-family: 'Rubik', sans-serif;
   font-weight: 400;
-  font-size: clamp(0.9rem, 1rem, 1.05rem);
+  font-size: clamp(0.95rem, 1.05rem, 1.1rem);
   color: #ffffff;
   line-height: 33px;
   letter-spacing: 0.15px;
@@ -63,7 +64,7 @@
   line-height: 33px;
 }
 
-.App__Form > form > textarea {
+.App__Form > .App__Form__Input > form > textarea {
   resize: none !important;
   width: 100% !important;
   max-width: 100% !important;
@@ -86,14 +87,62 @@
     0 32px 64px rgba(0, 0, 0, 0.07);
 }
 
-.App__Form > form > textarea:focus {
+.App__Form > .App__Form__Input > form > .App__Form__Radio {
+  display: grid;
+  /* Reference: https://dev.to/afif/build-your-responsive-website-without-media-query-omj */
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(
+      clamp(
+        clamp(
+          100%/ (2 + 1) + 0.1%,
+          (823.02px - 100vw) * 1000,
+          100%/ (2 + 1) + 0.1%
+        ),
+        (700.02px - 100vw) * 1000,
+        100%
+      ),
+      1fr
+    )
+  );
+  gap: 5px;
+  margin-top: 6px;
+  margin-bottom: 10px;
+  font-family: 'Rubik', sans-serif;
+  font-size: clamp(0.89rem, 0.91rem, 0.95rem);
+  font-family: 400;
+  color: #ffffff;
+}
+
+.App__Form
+  > .App__Form__Input
+  > form
+  > .App__Form__Radio
+  > .App__Form__Radio__Option {
+  display: flex;
+  align-items: center !important;
+  padding-left: 0;
+}
+
+.App__Form
+  > .App__Form__Input
+  > form
+  > .App__Form__Radio
+  > .App__Form__Radio__Option
+  > input[type='radio'] {
+  margin-left: 0;
+  margin-right: 8px;
+  margin-top: 0;
+}
+
+.App__Form > .App__Form__Input > form > textarea:focus {
   outline-color: #515ada !important;
   outline-width: 1px !important;
 }
 
-.App__Form > form > button {
+.App__Form > .App__Form__Input > form > button {
   margin-top: 0.7em;
-  width: auto;
+  width: 150px;
   font-family: 'Rubik', sans-serif;
   font-size: 0.8rem;
   text-transform: uppercase;
@@ -118,12 +167,12 @@
   touch-action: manipulation;
 }
 
-.App__Form > form > button:hover {
+.App__Form > .App__Form__Input > form > button:hover {
   background-color: #3b2c9e;
   transition-duration: 0.2s;
 }
 
-.App__Form > form > button:disabled {
+.App__Form > .App__Form__Input > form > button:disabled {
   background-color: #484848 !important;
   transition-duration: 0.2s;
   cursor: wait;

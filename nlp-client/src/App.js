@@ -11,9 +11,18 @@ const App = function mainApp() {
   const [confidence, setConfidence] = useState("");
   const [loading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
+  const [modelOption, setModelOption] = useState("ml");
+
+  const handleModelOptionChange = (event) => {
+    const { target } = event;
+    if (target.checked) {
+      setModelOption(target.value);
+    }
+  };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    console.log(event.target.model.value);
     const content = event.target.sentence.value;
     const data = { sentence: content };
 
@@ -47,8 +56,11 @@ const App = function mainApp() {
             recent decades. Since then, numerous approaches and algorithms have
             been introduced, ranging from <strong>lexicon-based</strong> to{" "}
             <strong>machine learning</strong> and <strong>deep learning</strong>
-            -based SA. Implementation of the Sentiment Analysis Model can be
-            found on{" "}
+            -based SA.
+          </p>
+          <p>Dataset: IMDB Reviews</p>
+          <p>
+            Implementation of the Sentiment Analysis Model can be found on{" "}
             <a
               href="https://github.com/dejongyeong/nlp-web-app/blob/ml-model/model/sentiment-analysis.ipynb"
               target="_blank"
@@ -64,19 +76,47 @@ const App = function mainApp() {
             <p>Sentiment Label: {sentiment}</p>
             <p>Confidence Score: {confidence}</p>
           </div>
-          <form id="input-form" onSubmit={handleSubmit}>
-            <textarea
-              name="sentence"
-              rows="15"
-              cols="70"
-              wrap="soft"
-              placeholder="Try with you own text..."
-              defaultValue="Today is a good day!!"
-            />
-            <button type="submit" disabled={loading}>
-              Classify Text
-            </button>
-          </form>
+          <div className="App__Form__Input">
+            <form id="input-form" onSubmit={handleSubmit}>
+              <textarea
+                name="sentence"
+                rows="15"
+                cols="70"
+                wrap="soft"
+                placeholder="Try with you own text..."
+                defaultValue="Today is a good day!!"
+              />
+              <div className="App__Form__Radio">
+                <div className="App__Form__Radio__Option">
+                  <input
+                    type="radio"
+                    value="ml"
+                    name="model"
+                    checked={modelOption === "ml"}
+                    onChange={handleModelOptionChange}
+                  />
+                  <p>Multinomial Naive Bayes</p>
+                </div>
+                <div className="App__Form__Radio__Option">
+                  <input
+                    type="radio"
+                    value="dl"
+                    name="model"
+                    checked={modelOption === "dl"}
+                    onChange={handleModelOptionChange}
+                  />
+                  <p>BERT Deep Learning</p>
+                </div>
+              </div>
+              <button type="submit" disabled={loading}>
+                {loading ? (
+                  <i className="fa fa-circle-o-notch fa-spin" />
+                ) : (
+                  "Classify Text"
+                )}
+              </button>
+            </form>
+          </div>
           {errorMessage}
         </div>
       </main>
