@@ -57,13 +57,24 @@ const App = function mainApp() {
             positive, negative, or neutral from User Generated Contents. It is
             the most researched subfield and has received a lot of attention in
             recent decades. Since then, numerous approaches and algorithms have
-            been introduced, ranging from <strong>lexicon-based</strong> to{" "}
-            <strong>machine learning</strong> and <strong>deep learning</strong>
-            -based SA.
+            been introduced, ranging from lexicon-based to machine learning (ML)
+            and deep learning (DL) -based SA. In{" "}
+            <strong>Multinomial Naive Bayes</strong> ML model, the algorithm
+            determines the probabilities of classes assigned to a corpus by
+            using the join probabilities of words and classes. In contrast, the{" "}
+            <strong>
+              Bidirectional Encoder Representations from Transformers (BERT)
+            </strong>{" "}
+            DL model has a deeper sense of language context and can provide a
+            much higher confidence score than a single-direction language
+            models.
           </p>
-          <p>Dataset: IMDB Reviews</p>
           <p>
-            Implementation of the Sentiment Analysis Model can be found on{" "}
+            <strong>Dataset:</strong> IMDB Reviews (35,000 train and 15,000
+            test)
+          </p>
+          <p>
+            Implementation of the Sentiment Analysis Model can be found in{" "}
             <a
               href="https://github.com/dejongyeong/nlp-web-app/blob/ml-model/model/sentiment-analysis.ipynb"
               target="_blank"
@@ -124,7 +135,7 @@ const App = function mainApp() {
         </div>
       </main>
       <footer className="App__Footer">
-        Design and Built by De Jong Yeong © 2021{" "}
+        Design and Built by De Jong Yeong © {new Date().getFullYear()}
       </footer>
     </div>
   );

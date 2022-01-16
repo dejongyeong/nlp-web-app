@@ -21,3 +21,4 @@ _P.S: This is an extension/improvement/additional features of my Bachelor Degree
 - Rahul Agarwal: [Text Preprocessing Methods for Deep Learning](https://towardsdatascience.com/nlp-learning-series-part-1-text-preprocessing-methods-for-deep-learning-20085601684b)
 - Mahdyar Hasanpour: [Resolve ansi-html vulnerability](https://github.com/Tjatse/ansi-html/issues/19#issuecomment-936734884)
 - AskPython: [Python Django App Structure and Project Structure](https://www.askpython.com/django/django-app-structure-project-structure)
+- Rani Horev: [BERT Explained: Start of the art language model for NLP](https://towardsdatascience.com/bert-explained-state-of-the-art-language-model-for-nlp-f8b21a9b6270)
