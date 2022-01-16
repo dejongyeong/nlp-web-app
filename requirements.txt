@@ -1,4 +1,4 @@
-Django==3.2.9
+Django==3.2.11
 django-cors-headers==3.10.0
 djangorestframework==3.12.4
 numpy==1.21.4
