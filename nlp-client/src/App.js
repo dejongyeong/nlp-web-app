@@ -11,7 +11,7 @@ const App = function mainApp() {
   const [confidence, setConfidence] = useState("");
   const [loading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
-  const [modelOption, setModelOption] = useState("ml");
+  const [modelOption, setModelOption] = useState("mnb");
 
   const handleModelOptionChange = (event) => {
     const { target } = event;
@@ -24,7 +24,8 @@ const App = function mainApp() {
     event.preventDefault();
     console.log(event.target.model.value);
     const content = event.target.sentence.value;
-    const data = { sentence: content };
+    const model = event.target.model.value;
+    const data = { sentence: content, option: model };
 
     try {
       setLoading(true);
@@ -32,8 +33,10 @@ const App = function mainApp() {
       const response = await axios.post("/api/v1/analyze", data);
       if (response.status === 200) {
         const { pred, prob } = response.data.data;
-        setSentiment(`${pred}`);
-        setConfidence(`${prob}%`);
+        const label = pred === 0 ? "Negative" : "Positive";
+        const percent = Math.round(prob * 100 * 100) / 100;
+        setSentiment(`${label}`);
+        setConfidence(`${percent}%`);
       }
       setLoading(false);
     } catch (error) {
@@ -90,9 +93,9 @@ const App = function mainApp() {
                 <div className="App__Form__Radio__Option">
                   <input
                     type="radio"
-                    value="ml"
+                    value="mnb"
                     name="model"
-                    checked={modelOption === "ml"}
+                    checked={modelOption === "mnb"}
                     onChange={handleModelOptionChange}
                   />
                   <p>Multinomial Naive Bayes</p>
@@ -100,9 +103,9 @@ const App = function mainApp() {
                 <div className="App__Form__Radio__Option">
                   <input
                     type="radio"
-                    value="dl"
+                    value="bert"
                     name="model"
-                    checked={modelOption === "dl"}
+                    checked={modelOption === "bert"}
                     onChange={handleModelOptionChange}
                   />
                   <p>BERT Deep Learning</p>
