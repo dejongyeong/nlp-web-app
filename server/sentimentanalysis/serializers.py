@@ -5,3 +5,4 @@ from rest_framework.serializers import Serializer
 # into JSON, XML or other content types
 class AnalyzerSerializer(Serializer):
     sentence = serializers.CharField(max_length=None, trim_whitespace=True, allow_blank=False)
+    option = serializers.CharField(max_length=None, trim_whitespace=True, allow_blank=False)
