@@ -22,7 +22,6 @@ const App = function mainApp() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log(event.target.model.value);
     const content = event.target.sentence.value;
     const model = event.target.model.value;
     const data = { sentence: content, option: model };
