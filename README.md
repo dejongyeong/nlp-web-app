@@ -1,5 +1,7 @@
 # NLP Web App: Sentiment Analysis
 
+![NLP Web App Landing Page](nlp-client/img/sa-capture.PNG)
+
 Analyse and predict the sentiment of user defined inputs using Python Django, ReactJS and APIs.
 
 _P.S: This is an extension/improvement/additional features of my Bachelor Degree Final Year Project: [Sentiment Analysis Approach for Reputation Evaluation](https://github.com/dejongyeong/sentiment-analysis). This iteration uses TensorFlow and some pre-processing methods, e.g., html tags cleaning, to lowercase, digits removal, expand contractions, etc. before model training._
